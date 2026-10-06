@@ -17,7 +17,11 @@
             <img src="Images/Fischer Logo.jpeg" alt="Logo des Kfz-Meisterbetriebs Fischer" class="logo">
         </a>
 
-        <nav aria-label="Hauptnavigation">
+        <button type="button" class="menue-button" aria-expanded="false" aria-controls="hauptnavigation">
+            Menü
+        </button>
+
+        <nav id="hauptnavigation" aria-label="Hauptnavigation">
             <a href="#leistungen">Leistungen</a>
             <a href="#werkstatt">Unsere Werkstatt</a>
             <a href="#kontakt">Kontakt</a>
@@ -79,21 +83,58 @@
         <section id="werkstatt" class="werkstatt">
             <div class="werkstatt-inhalt">
                 <p class="untertitel">Unsere Werkstatt</p>
-                <h2>Technik trifft Handwerk</h2>
+
+                <h2>Technik trifft Handwerk.</h2>
+
                 <p>
                     Lernen Sie den Kfz-Meisterbetrieb Fischer kennen.
                     Hier stellen wir Ihnen demnächst unser Team,
                     unsere Werkstatt und unsere Arbeitsweise vor.
                 </p>
+
                 <a href="#kontakt" class="button">
                     Kontakt aufnehmen
                 </a>
             </div>
         </section>
-        <section id="kontakt">
-            <h2>Kontakt</h2>
+
+        <section id="kontakt" class="kontakt">
+            <h2>Lassen Sie uns über Ihr Fahrzeug sprechen.</h2>
+
+            <p class="kontakt-einleitung">
+                Sie möchten einen Termin vereinbaren oder haben
+                eine Frage? Hier finden Sie bald unsere Kontaktdaten.
+            </p>
+
+            <div class="kontaktliste">
+                <div class="kontaktkarte">
+                    <h3>Telefon & E-Mail</h3>
+                    <p>Telefonnummer folgt</p>
+                    <p>E-Mail-Adresse folgt</p>
+                </div>
+
+                <div class="kontaktkarte">
+                    <h3>Hier finden Sie uns</h3>
+                    <address>
+                        Kfz-Meisterbetrieb Fischer<br>
+                        Straße und Hausnummer folgen<br>
+                        Postleitzahl und Ort folgen
+                    </address>
+                </div>
+
+                <div class="kontaktkarte">
+                    <h3>Öffnungszeiten</h3>
+                    <p>Unsere Öffnungszeiten folgen.</p>
+                </div>
+            </div>
         </section>
     </main>
+    <footer class="fusszeile">
+        <p class="fusszeile-name">Kfz-Meisterbetrieb-Fischer</p>
+        <p class="demo-hinweis">
+            Webseite im Aufbau
+        </p>
+    </footer>
 </body>
 
 </html>
