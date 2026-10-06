@@ -1,0 +1,249 @@
+:root {
+    --blau: #0066ff;
+    --schwarz: #111111;
+    --weiss: #ffffff;
+    --silbergrau: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--schwarz);
+    background-color: var(--weiss);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+    border-bottom: 3px solid var(--blau);
+}
+
+.logo {
+    display: block;
+    width: 140px;
+    max-width: 100%;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--schwarz);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    color: var(--blau);
+    background-color: var(--silbergrau);
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--blau);
+    outline-offset: 3px;
+}
+
+.startbereich {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    min-height: 560px;
+    padding: 64px 24px;
+    color: var(--weiss);
+    background-color: var(--schwarz);
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("images/demoBuehne.png");
+
+    background-size: cover;
+    background-position: 65% 35%;
+}
+
+.startbereich p {
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.untertitel {
+    margin: 0 0 16px;
+    color: var(--weiss);
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.startbereich h1 {
+    max-width: 750px;
+    margin: 0 0 24px;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    max-height: 100%;
+    margin-top: 24px;
+    padding: 16px 28px;
+
+    color: var(--weiss);
+    background-color: var(--blau);
+    border: 2px solid transparent;
+    border-radius: 8px;
+
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #0052cc;
+}
+
+.button:focus-visible {
+    outline: 3px solid var(--weiss);
+    outline-offset: 4px;
+    border-color: var(--schwarz);
+}
+
+.leistungen {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.leistungen h2 {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.04em;
+}
+
+.leistungen > p {
+    max-width: 600px;
+    margin: 0 0 40px;
+    color: #52525b;
+    line-height: 1.6;
+}
+
+.leistungsliste {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 280px), 1fr)
+    );
+    gap: 24px;
+}
+
+.leistungskarte {
+    padding: 32px;
+    background-color: #f5f6f8;
+    border: 1px solid var(--silbergrau);
+    border-top: 3px solid var(--blau);
+    border-radius: 16px;
+}
+
+.leistungskarte h3 {
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+}
+
+.leistungskarte p {
+    margin: 0;
+    color: #52525b;
+    line-height: 1.6;
+}
+
+.leistungskarte:hover {
+    border-color: var(--blau);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.werkstatt {
+    padding: 80px 24px;
+    color: var(--weiss);
+    background-color: var(--schwarz);
+    background-image: radial-gradient(
+        circle at top right,
+        rgba(0, 102, 255, 0.18),
+        transparent 60%
+    );
+}
+
+.werkstatt-inhalt {
+    max-width: 1152px;
+    margin: 0 auto;
+}
+
+.werkstatt h2 {
+    max-width: 750px;
+    margin: 0 0 24px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.werkstatt-inhalt > p:not(.untertitel) {
+    max-width: 600px;
+    margin: 0;
+    color: var(--silbergrau);
+    line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .button {
+        transition: 
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .button:hover {
+        transform: translateY(-2px);
+    }
+}
+
+
+
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+    }
+
+    .logo {
+        width: 180px;
+    }
+
+    .startbereich {
+        min-height: 650px;
+        padding: 100px 40px;
+        background-position: center 35%;
+    }
+}
