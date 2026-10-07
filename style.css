@@ -80,7 +80,7 @@ nav a:focus-visible {
             rgba(0, 0, 0, 0.85),
             rgba(0, 0, 0, 0.45)
         ),
-        url("images/demoBuehne.png");
+        url("Images/demoBuehne.png");
 
     background-size: cover;
     background-position: 65% 35%;
@@ -113,7 +113,7 @@ nav a:focus-visible {
     align-items: center;
     justify-content: center;
     min-height: 48px;
-    max-height: 100%;
+    max-width: 100%;
     margin-top: 24px;
     padding: 16px 28px;
 
@@ -280,6 +280,116 @@ nav a:focus-visible {
 .menue-button:focus-visible {
     outline: 2px solid var(--blau);
     outline-offset: 3px;
+}
+
+/* Tage und Zeiten stehen in zwei gemeinsamen Spalten. */
+.oeffnungszeiten {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 16px;
+    margin: 0;
+    color: #52525b;
+    font-size: 0.9375rem;
+    line-height: 0.8;
+}
+
+.oeffnungszeiten dt {
+    font-weight: bold;
+}
+
+.oeffnungszeiten dd {
+    margin: 0;
+    text-align: right;
+}
+
+/* Eigener Formularbereich über den Kontaktkarten. */
+.terminformular {
+    margin-bottom: 48px;
+    padding: clamp(24px, 4vw, 40px);
+    background-color: #f5f6f8;
+    border: 1px solid var(--silbergrau);
+    border-radius: 16px;
+}
+
+.terminformular h3 {
+    margin: 0 0 16px;
+    font-size: 1.5rem;
+}
+
+.terminformular > p {
+    max-width: 650px;
+    margin: 0 0 24px;
+    color: #52525b;
+    line-height: 1.6;
+}
+
+/* Die Anzahl der Spalten passt sich automatisch an den Platz an. */
+.formularfelder {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 300px), 1fr)
+    );
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.formularfeld {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.formularfeld label {
+    font-weight: bold;
+}
+
+/* Eine gemeinsame Regel gestaltet alle drei Feldtypen. */
+.formularfeld input,
+.formularfeld textarea,
+.formularfeld select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--schwarz);
+    background-color: var(--weiss);
+    border: 1px solid #9ca3af;
+    border-radius: 8px;
+}
+
+/* Das Anliegen nutzt die gesamte Rasterbreite. */
+.formularfeld:has(textarea) {
+    grid-column: 1 / -1;
+}
+
+.formularfeld textarea {
+    resize: vertical;
+}
+
+/* Sichtbarer Rahmen beim Ausfüllen mit der Tastatur. */
+.formularfeld input:focus-visible,
+.formularfeld textarea:focus-visible,
+.formularfeld select:focus-visible {
+    outline: 2px solid var(--blau);
+    outline-offset: 2px;
+}
+
+.terminformular .button {
+    font: inherit;
+    font-weight: bold;
+}
+
+/* Der Versand bleibt vorerst deaktiviert. */
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.button:disabled:hover {
+    background-color: var(--blau);
 }
 
 @media (max-width: 767px) {

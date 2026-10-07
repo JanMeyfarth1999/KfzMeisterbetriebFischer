@@ -14,10 +14,19 @@
 <body>
     <header>
         <a href="index.html">
-            <img src="Images/Fischer Logo.jpeg" alt="Logo des Kfz-Meisterbetriebs Fischer" class="logo">
+            <img
+                src="Images/Fischer Logo.jpeg"
+                alt="Logo des Kfz-Meisterbetriebs Fischer"
+                class="logo"
+            >
         </a>
 
-        <button type="button" class="menue-button" aria-expanded="false" aria-controls="hauptnavigation">
+        <button
+            type="button"
+            class="menue-button"
+            aria-expanded="false"
+            aria-controls="hauptnavigation"
+        >
             Menü
         </button>
 
@@ -103,37 +112,158 @@
 
             <p class="kontakt-einleitung">
                 Sie möchten einen Termin vereinbaren oder haben
-                eine Frage? Hier finden Sie bald unsere Kontaktdaten.
+                eine Frage? Kontaktieren Sie uns telefonisch
+                oder per E-Mail.
             </p>
+
+            <!-- Terminanfrage: Der Versand wird später eingerichtet. -->
+            <form class="terminformular">
+                <h3>Termin anfragen</h3>
+
+                <p>
+                    Teilen Sie uns Ihr Anliegen und Ihren Wunschtermin mit.
+                    Der Termin ist erst nach unserer Bestätigung verbindlich.
+                    Dieses Formular versendet derzeit noch keine Anfrage.
+                </p>
+
+                <!-- Gemeinsamer Container für das responsive Feldraster. -->
+                <div class="formularfelder">
+                    <div class="formularfeld">
+                        <label for="name">Ihr Name *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="formularfeld">
+                        <label for="email">E-Mail-Adresse *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="formularfeld">
+                        <label for="telefon">Telefonnummer</label>
+                        <input
+                            type="tel"
+                            id="telefon"
+                            name="telefon"
+                            autocomplete="tel"
+                        >
+                    </div>
+
+                    <div class="formularfeld">
+                        <label for="fahrzeug">Fahrzeug *</label>
+                        <input
+                            type="text"
+                            id="fahrzeug"
+                            name="fahrzeug"
+                            placeholder="Zum Beispiel Ford Focus, Baujahr 2017"
+                            required
+                        >
+                    </div>
+
+                    <div class="formularfeld">
+                        <label for="leistung">Gewünschte Leistung *</label>
+                        <select id="leistung" name="leistung" required>
+                            <option value="">Bitte auswählen</option>
+                            <option value="inspektion">Inspektion & Wartung</option>
+                            <option value="reparatur">Diagnose & Reparatur</option>
+                            <option value="reifen">Reifen & Räder</option>
+                            <option value="sonstiges">Sonstiges Anliegen</option>
+                        </select>
+                    </div>
+
+                    <div class="formularfeld">
+                        <label for="wunschtermin">Wunschtermin</label>
+                        <input
+                            type="date"
+                            id="wunschtermin"
+                            name="wunschtermin"
+                        >
+                    </div>
+
+                    <div class="formularfeld">
+                        <label for="anliegen">Ihr Anliegen *</label>
+                        <textarea
+                            id="anliegen"
+                            name="anliegen"
+                            rows="5"
+                            placeholder="Was dürfen wir für Ihr Fahrzeug tun?"
+                            required
+                        ></textarea>
+                    </div>
+                </div>
+
+                <p>* Pflichtfelder</p>
+
+                <!-- Noch kein Versand: Der Knopf bleibt deaktiviert. -->
+                <button type="button" class="button" disabled>
+                    Versand wird noch eingerichtet
+                </button>
+            </form>
 
             <div class="kontaktliste">
                 <div class="kontaktkarte">
                     <h3>Telefon & E-Mail</h3>
-                    <p>Telefonnummer folgt</p>
-                    <p>E-Mail-Adresse folgt</p>
+                    <p>05684-922442</p>
+                    <p>lukas.fischer@frielendorf.de</p>
                 </div>
 
                 <div class="kontaktkarte">
                     <h3>Hier finden Sie uns</h3>
                     <address>
-                        Kfz-Meisterbetrieb Fischer<br>
-                        Straße und Hausnummer folgen<br>
-                        Postleitzahl und Ort folgen
+                        Kfz-Meisterbetrieb-Fischer<br>
+                        Mühlenstraße 3<br>
+                        34621 Frielendorf
                     </address>
                 </div>
 
                 <div class="kontaktkarte">
                     <h3>Öffnungszeiten</h3>
-                    <p>Unsere Öffnungszeiten folgen.</p>
+
+                    <!-- Jeder Tag gehört zur direkt folgenden Zeitangabe. -->
+                    <dl class="oeffnungszeiten">
+                        <dt>Montag</dt>
+                        <dd>09:00–17:00</dd>
+
+                        <dt>Dienstag</dt>
+                        <dd>09:00–17:00</dd>
+
+                        <dt>Mittwoch</dt>
+                        <dd>09:00–17:00</dd>
+
+                        <dt>Donnerstag</dt>
+                        <dd>09:00–17:00</dd>
+
+                        <dt>Freitag</dt>
+                        <dd>09:00–15:00</dd>
+
+                        <dt>Samstag</dt>
+                        <dd>09:00–12:00</dd>
+
+                        <dt>Sonntag</dt>
+                        <dd>Geschlossen</dd>
+
+                        <dt>Feiertage</dt>
+                        <dd>Geschlossen</dd>
+                    </dl>
                 </div>
             </div>
         </section>
     </main>
+
     <footer class="fusszeile">
         <p class="fusszeile-name">Kfz-Meisterbetrieb-Fischer</p>
-        <p class="demo-hinweis">
-            Webseite im Aufbau
-        </p>
+        <p class="demo-hinweis">Webseite im Aufbau</p>
     </footer>
 </body>
 
