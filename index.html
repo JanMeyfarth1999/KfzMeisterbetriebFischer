@@ -14,19 +14,10 @@
 <body>
     <header>
         <a href="index.html">
-            <img
-                src="Images/Fischer Logo.jpeg"
-                alt="Logo des Kfz-Meisterbetriebs Fischer"
-                class="logo"
-            >
+            <img src="Images/Fischer Logo.jpeg" alt="Logo des Kfz-Meisterbetriebs Fischer" class="logo">
         </a>
 
-        <button
-            type="button"
-            class="menue-button"
-            aria-expanded="false"
-            aria-controls="hauptnavigation"
-        >
+        <button type="button" class="menue-button" aria-expanded="false" aria-controls="hauptnavigation">
             Menü
         </button>
 
@@ -69,6 +60,11 @@
                         Regelmäßige Kontrolle und Wartung
                         für ein zuverlässiges Fahrzeug.
                     </p>
+
+                    <!-- Der Wert entspricht der Option im Formular. -->
+                    <a href="#kontakt" class="leistungslink" data-leistung="inspektion">
+                        Inspektion anfragen →
+                    </a>
                 </article>
 
                 <article class="leistungskarte">
@@ -77,6 +73,10 @@
                         Fehler erkennen und die passende
                         Reparatur mit Ihnen abstimmen.
                     </p>
+
+                    <a href="#kontakt" class="leistungslink" data-leistung="reparatur">
+                        Reparatur anfragen →
+                    </a>
                 </article>
 
                 <article class="leistungskarte">
@@ -85,6 +85,10 @@
                         Reifenwechsel und Kontrolle
                         für sicheren Kontakt zur Straße.
                     </p>
+
+                    <a href="#kontakt" class="leistungslink" data-leistung="reifen">
+                        Reifenservice anfragen →
+                    </a>
                 </article>
             </div>
         </section>
@@ -130,45 +134,23 @@
                 <div class="formularfelder">
                     <div class="formularfeld">
                         <label for="name">Ihr Name *</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            autocomplete="name"
-                            required
-                        >
+                        <input type="text" id="name" name="name" autocomplete="name" required>
                     </div>
 
                     <div class="formularfeld">
                         <label for="email">E-Mail-Adresse *</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            autocomplete="email"
-                            required
-                        >
+                        <input type="email" id="email" name="email" autocomplete="email" required>
                     </div>
 
                     <div class="formularfeld">
                         <label for="telefon">Telefonnummer</label>
-                        <input
-                            type="tel"
-                            id="telefon"
-                            name="telefon"
-                            autocomplete="tel"
-                        >
+                        <input type="tel" id="telefon" name="telefon" autocomplete="tel">
                     </div>
 
                     <div class="formularfeld">
                         <label for="fahrzeug">Fahrzeug *</label>
-                        <input
-                            type="text"
-                            id="fahrzeug"
-                            name="fahrzeug"
-                            placeholder="Zum Beispiel Ford Focus, Baujahr 2017"
-                            required
-                        >
+                        <input type="text" id="fahrzeug" name="fahrzeug"
+                            placeholder="Zum Beispiel Ford Focus, Baujahr 2017" required>
                     </div>
 
                     <div class="formularfeld">
@@ -184,22 +166,13 @@
 
                     <div class="formularfeld">
                         <label for="wunschtermin">Wunschtermin</label>
-                        <input
-                            type="date"
-                            id="wunschtermin"
-                            name="wunschtermin"
-                        >
+                        <input type="date" id="wunschtermin" name="wunschtermin">
                     </div>
 
                     <div class="formularfeld">
                         <label for="anliegen">Ihr Anliegen *</label>
-                        <textarea
-                            id="anliegen"
-                            name="anliegen"
-                            rows="5"
-                            placeholder="Was dürfen wir für Ihr Fahrzeug tun?"
-                            required
-                        ></textarea>
+                        <textarea id="anliegen" name="anliegen" rows="5"
+                            placeholder="Was dürfen wir für Ihr Fahrzeug tun?" required></textarea>
                     </div>
                 </div>
 
@@ -211,52 +184,62 @@
                 </button>
             </form>
 
-            <div class="kontaktliste">
-                <div class="kontaktkarte">
-                    <h3>Telefon & E-Mail</h3>
-                    <p>05684-922442</p>
-                    <p>lukas.fischer@frielendorf.de</p>
-                </div>
+            <div class="kontaktkarte">
+                <h3>Telefon & E-Mail</h3>
 
-                <div class="kontaktkarte">
-                    <h3>Hier finden Sie uns</h3>
-                    <address>
-                        Kfz-Meisterbetrieb-Fischer<br>
-                        Mühlenstraße 3<br>
-                        34621 Frielendorf
-                    </address>
-                </div>
+                <!-- Die Telefonnummer im Link enthält die deutsche Landesvorwahl. -->
+                <p>
+                    <a class="kontaktlink" href="tel:+495684922442">
+                        05684-922442
+                    </a>
+                </p>
 
-                <div class="kontaktkarte">
-                    <h3>Öffnungszeiten</h3>
+                <!-- Öffnet das eingerichtete E-Mail-Programm. -->
+                <p>
+                    <a class="kontaktlink" href="mailto:lukas.fischer@frielendorf.de">
+                        lukas.fischer@frielendorf.de
+                    </a>
+                </p>
+            </div>
+            <div class="kontaktkarte">
+                <h3>Hier finden Sie uns</h3>
+                <address>
+                    Kfz-Meisterbetrieb-Fischer<br>
+                    Mühlenstraße 3<br>
+                    34621 Frielendorf
+                </address>
+            </div>
 
-                    <!-- Jeder Tag gehört zur direkt folgenden Zeitangabe. -->
-                    <dl class="oeffnungszeiten">
-                        <dt>Montag</dt>
-                        <dd>09:00–17:00</dd>
+            <div class="kontaktkarte">
+                <h3>Öffnungszeiten</h3>
 
-                        <dt>Dienstag</dt>
-                        <dd>09:00–17:00</dd>
+                <!-- Jeder Tag gehört zur direkt folgenden Zeitangabe. -->
+                <dl class="oeffnungszeiten">
+                    <dt>Montag</dt>
+                    <dd>09:00–17:00</dd>
 
-                        <dt>Mittwoch</dt>
-                        <dd>09:00–17:00</dd>
+                    <dt>Dienstag</dt>
+                    <dd>09:00–17:00</dd>
 
-                        <dt>Donnerstag</dt>
-                        <dd>09:00–17:00</dd>
+                    <dt>Mittwoch</dt>
+                    <dd>09:00–17:00</dd>
 
-                        <dt>Freitag</dt>
-                        <dd>09:00–15:00</dd>
+                    <dt>Donnerstag</dt>
+                    <dd>09:00–17:00</dd>
 
-                        <dt>Samstag</dt>
-                        <dd>09:00–12:00</dd>
+                    <dt>Freitag</dt>
+                    <dd>09:00–15:00</dd>
 
-                        <dt>Sonntag</dt>
-                        <dd>Geschlossen</dd>
+                    <dt>Samstag</dt>
+                    <dd>09:00–12:00</dd>
 
-                        <dt>Feiertage</dt>
-                        <dd>Geschlossen</dd>
-                    </dl>
-                </div>
+                    <dt>Sonntag</dt>
+                    <dd>Geschlossen</dd>
+
+                    <dt>Feiertage</dt>
+                    <dd>Geschlossen</dd>
+                </dl>
+            </div>
             </div>
         </section>
     </main>

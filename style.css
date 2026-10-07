@@ -392,6 +392,48 @@ nav a:focus-visible {
     background-color: var(--blau);
 }
 
+/* Gemeinsame Gestaltung der Anfragelinks auf den Leistungskarten. */
+.leistungslink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 20px;
+    color: #0052cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.leistungslink:hover {
+    text-decoration: underline;
+}
+
+.leistungslink:focus-visible {
+    outline: 2px solid var(--blau);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* Gemeinsame Gestaltung für Telefon- und E-Mail-Link. */
+.kontaktlink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    max-width: 100%;
+    color: #0052cc;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.kontaktlink:hover {
+    text-decoration: underline;
+}
+
+.kontaktlink:focus-visible {
+    outline: 2px solid var(--blau);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 @media (max-width: 767px) {
     header {
         flex-direction: row;
