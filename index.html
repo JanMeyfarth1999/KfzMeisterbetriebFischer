@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kfz-Meisterbetrieb Fischer</title>
+    <title>Kfz-Meisterbetrieb Fischer | Werkstatt in Frielendorf</title>
+    <!-- Kurze Beschreibung der Website für Suchmaschinen. -->
+    <meta name="description"
+        content="Kfz-Meisterbetrieb Fischer in Frielendorf: Inspektion, Wartung, Diagnose, Reparatur und Reifenservice. Kontaktieren Sie uns für eine Terminanfrage.">
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -153,6 +156,39 @@
                             placeholder="Zum Beispiel Ford Focus, Baujahr 2017" required>
                     </div>
 
+                    <!-- Fahrzeugkennung für die Zuordnung passender Ersatzteile. -->
+                    <div class="formularfeld">
+                        <label for="fin">Fahrgestellnummer (FIN)</label>
+                        <input type="text" id="fin" name="fin" maxlength="17" placeholder="17-stellige Fahrzeugnummer"
+                            aria-describedby="fin-hinweis">
+                        <small id="fin-hinweis" class="formularhinweis">
+                            Im Fahrzeugschein unter Feld E.
+                        </small>
+                    </div>
+
+                    <!-- Beide Schlüsselnummern werden gemeinsam eingegeben. -->
+                    <div class="formularfeld">
+                        <label for="hsn-tsn">HSN / TSN</label>
+                        <input type="text" id="hsn-tsn" name="hsn_tsn" placeholder="Zum Beispiel 0603 / BQG"
+                            aria-describedby="hsn-tsn-hinweis">
+                        <small id="hsn-tsn-hinweis" class="formularhinweis">
+                            Im Fahrzeugschein: HSN unter 2.1 und die ersten
+                            drei Zeichen aus 2.2 für die TSN.
+                        </small>
+                    </div>
+
+                    <!-- Optionales Foto zur Zuordnung der Fahrzeugdaten. -->
+                    <div class="formularfeld formularfeld-upload">
+                        <label for="fahrzeugschein">Foto des Fahrzeugscheins</label>
+                        <input type="file" id="fahrzeugschein" name="fahrzeugschein" accept="image/*"
+                            aria-describedby="fahrzeugschein-hinweis">
+                        <small id="fahrzeugschein-hinweis" class="formularhinweis">
+                            Optional. Bitte Fahrzeugdaten gut lesbar fotografieren.
+                            Persönliche Angaben wie Name und Anschrift können Sie abdecken.
+                            Das Bild wird derzeit noch nicht versendet.
+                        </small>
+                    </div>
+
                     <div class="formularfeld">
                         <label for="leistung">Gewünschte Leistung *</label>
                         <select id="leistung" name="leistung" required>
@@ -208,6 +244,12 @@
                     Mühlenstraße 3<br>
                     34621 Frielendorf
                 </address>
+                <!-- Öffnet die Routenplanung mit der Werkstattadresse als Ziel. -->
+                <a class="kontaktlink"
+                    href="https://www.google.com/maps/dir/?api=1&amp;destination=M%C3%BChlenstra%C3%9Fe%203%2C%2034621%20Frielendorf"
+                    target="_blank" rel="noopener noreferrer">
+                    Route planen ↗
+                </a>
             </div>
 
             <div class="kontaktkarte">

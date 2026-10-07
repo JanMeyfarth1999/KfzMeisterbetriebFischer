@@ -4,10 +4,8 @@
     --weiss: #ffffff;
     --silbergrau: #e5e7eb;
 
-    --seitenabstand: max(
-        24px,
-        calc((100% - 1152px) / 2)
-    );
+    --seitenabstand: max(24px,
+            calc((100% - 1152px) / 2));
 }
 
 * {
@@ -75,11 +73,9 @@ nav a:focus-visible {
     background-color: var(--schwarz);
 
     background-image:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             rgba(0, 0, 0, 0.85),
-            rgba(0, 0, 0, 0.45)
-        ),
+            rgba(0, 0, 0, 0.45)),
         url("Images/demoBuehne.png");
 
     background-size: cover;
@@ -91,6 +87,7 @@ nav a:focus-visible {
     font-size: clamp(1rem, 1.2vw, 1.125rem);
     line-height: 1.7;
 }
+
 .startbereich .untertitel,
 .werkstatt .untertitel {
     margin: 0 0 16px;
@@ -151,7 +148,7 @@ nav a:focus-visible {
     letter-spacing: -0.04em;
 }
 
-.leistungen > p,
+.leistungen>p,
 .kontakt-einleitung {
     max-width: 600px;
     margin: 0 0 40px;
@@ -162,10 +159,8 @@ nav a:focus-visible {
 .leistungsliste,
 .kontaktliste {
     display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(min(100%, 280px), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit,
+            minmax(min(100%, 280px), 1fr));
     gap: 24px;
 }
 
@@ -202,7 +197,7 @@ nav a:focus-visible {
     overflow-wrap: anywhere;
 }
 
-.kontaktkarte p + p {
+.kontaktkarte p+p {
     margin-top: 8px;
 }
 
@@ -211,11 +206,9 @@ nav a:focus-visible {
     padding: 80px 24px;
     color: var(--weiss);
     background-color: var(--schwarz);
-    background-image: radial-gradient(
-        circle at top right,
-        rgba(0, 102, 255, 0.18),
-        transparent 60%
-    );
+    background-image: radial-gradient(circle at top right,
+            rgba(0, 102, 255, 0.18),
+            transparent 60%);
 }
 
 .werkstatt-inhalt {
@@ -231,7 +224,7 @@ nav a:focus-visible {
     letter-spacing: -0.04em;
 }
 
-.werkstatt-inhalt > p:not(.untertitel) {
+.werkstatt-inhalt>p:not(.untertitel) {
     max-width: 600px;
     margin: 0;
     color: var(--silbergrau);
@@ -316,22 +309,24 @@ nav a:focus-visible {
     font-size: 1.5rem;
 }
 
-.terminformular > p {
+.terminformular>p {
     max-width: 650px;
     margin: 0 0 24px;
     color: #52525b;
     line-height: 1.6;
 }
 
-/* Die Anzahl der Spalten passt sich automatisch an den Platz an. */
+/* Zwei gleich breite Spalten für ein ruhiges Formularlayout. */
 .formularfelder {
     display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(min(100%, 300px), 1fr)
-    );
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
     margin-bottom: 24px;
+}
+
+/* Der Upload nutzt die gesamte Formularbreite. */
+.formularfeld-upload {
+    grid-column: 1 / -1;
 }
 
 .formularfeld {
@@ -434,6 +429,35 @@ nav a:focus-visible {
     border-radius: 4px;
 }
 
+/* Hilfetexte unter den Formularfeldern. */
+.formularhinweis {
+    color: #52525b;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Lange Dateinamen sollen das Formular nicht verbreitern. */
+.formularfeld input[type="file"] {
+    min-width: 0;
+    padding: 10px;
+}
+
+/* Auswahlknopf passend zu den Farben der Website. */
+.formularfeld input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 8px 12px;
+    color: var(--weiss);
+    background-color: var(--blau);
+    border: none;
+    border-radius: 6px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.formularfeld input[type="file"]::file-selector-button:hover {
+    background-color: #0052cc;
+}
+
 @media (max-width: 767px) {
     header {
         flex-direction: row;
@@ -459,6 +483,11 @@ nav a:focus-visible {
     .menue-bereit nav.ist-offen {
         display: flex;
         flex-direction: column;
+    }
+
+    /* Auf Handys stehen alle Formularfelder untereinander. */
+    .formularfelder {
+        grid-template-columns: minmax(0, 1fr);
     }
 }
 
