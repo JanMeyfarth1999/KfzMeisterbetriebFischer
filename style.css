@@ -19,26 +19,29 @@ body {
     font-family: Arial, sans-serif;
     color: var(--schwarz);
     background-color: var(--weiss);
-/* Deutliche Silberreflexe mit schmalen weißen Glanzstreifen. */
-background-image:
-    linear-gradient(
-        115deg,
-        #ffffff 0%,
-        #ffffff 18%,
-        #e2e7ee 30%,
-        #cbd3df 36%,
-        #ffffff 40%,
-        #ffffff 43%,
-        #d5dce6 47%,
-        #f8fafc 55%,
-        #ffffff 65%,
-        #e2e7ee 78%,
-        #ffffff 90%
-    );
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-background-attachment: fixed;
+    /* Deutliche Silberreflexe mit schmalen weißen Glanzstreifen. */
+    background-image:
+        linear-gradient(115deg,
+            #ffffff 0%,
+            #ffffff 18%,
+            #e2e7ee 30%,
+            #cbd3df 36%,
+            #ffffff 40%,
+            #ffffff 43%,
+            #d5dce6 47%,
+            #f8fafc 55%,
+            #ffffff 65%,
+            #e2e7ee 78%,
+            #ffffff 90%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Abstand für Sprungziele unterhalb der festen Kopfzeile. */
+section[id] {
+    scroll-margin-top: 150px;
 }
 
 /* ==================================================
@@ -122,6 +125,12 @@ header {
     gap: 20px;
     padding: 16px;
     border-bottom: 3px solid var(--blau);
+    /* Der Kopfbereich bleibt beim Scrollen am oberen Bildschirmrand. */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--weiss);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
