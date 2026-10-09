@@ -19,20 +19,15 @@ body {
     font-family: Arial, sans-serif;
     color: var(--schwarz);
     background-color: var(--weiss);
-    /* Deutliche Silberreflexe mit schmalen weißen Glanzstreifen. */
-    background-image:
-        linear-gradient(115deg,
+    /* Dezenter silberner Glanz auf weißem Hintergrund. */
+    background-image: linear-gradient(115deg,
             #ffffff 0%,
-            #ffffff 18%,
-            #e2e7ee 30%,
-            #cbd3df 36%,
-            #ffffff 40%,
-            #ffffff 43%,
-            #d5dce6 47%,
-            #f8fafc 55%,
-            #ffffff 65%,
-            #e2e7ee 78%,
-            #ffffff 90%);
+            #ffffff 25%,
+            #f3f5f8 38%,
+            #ffffff 44%,
+            #ffffff 60%,
+            #f5f7fa 78%,
+            #ffffff 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -131,22 +126,17 @@ header {
     z-index: 100;
     /* Weißer Menübalken mit silbernem Glanz. */
     background-color: var(--weiss);
+    /* Zurückhaltender Glanz im Menübalken. */
     background-image: linear-gradient(115deg,
             #ffffff 0%,
-            #ffffff 20%,
-            #e2e7ee 34%,
-            #cbd3df 40%,
-            #ffffff 44%,
+            #f4f6f9 35%,
             #ffffff 48%,
-            #d5dce6 53%,
-            #f8fafc 65%,
-            #ffffff 80%,
-            #e2e7ee 100%);
+            #ffffff 70%,
+            #f5f7fa 100%);
 
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.06),
-        0 6px 24px rgba(0, 0, 0, 0.12);
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .logo {
