@@ -36,19 +36,29 @@
 
     <main>
         <section class="startbereich">
-            <p class="untertitel">Kfz-Meisterbetrieb Fischer</p>
+            <p class="untertitel">Kfz-Meisterbetrieb Fischer · Frielendorf</p>
 
-            <h1>Ihr Fahrzeug in guten Händen.</h1>
+            <h1>
+                Ihr Fahrzeug.<br>
+                <span class="start-akzent">Unser Handwerk.</span>
+            </h1>
 
-            <p>
-                Willkommen beim Kfz-Meisterbetrieb Fischer.
-                Hier finden Sie Informationen zu unserer Werkstatt
-                und unseren Leistungen.
+            <p class="startbeschreibung">
+                Inspektion, Reparatur und Reifenservice:
+                Sprechen Sie mit uns über Ihr Fahrzeug.
+                Gemeinsam stimmen wir die nächsten Schritte ab.
             </p>
 
-            <a href="#kontakt" class="button">
-                Termin anfragen
-            </a>
+            <!-- Hauptaktion und weiterführender Link stehen zusammen. -->
+            <div class="startaktionen">
+                <a href="#kontakt" class="button">
+                    Termin anfragen <span aria-hidden="true">↗</span>
+                </a>
+
+                <a href="#werkstatt" class="startlink">
+                    Werkstatt entdecken <span aria-hidden="true">→</span>
+                </a>
+            </div>
         </section>
 
         <section id="leistungen" class="leistungen">
@@ -61,6 +71,8 @@
 
             <div class="leistungsliste">
                 <article class="leistungskarte">
+                    <!-- Dekorative Nummer zur visuellen Gliederung. -->
+                    <span class="leistungsnummer" aria-hidden="true">01</span>
                     <h3>Inspektion & Wartung</h3>
                     <p>
                         Regelmäßige Kontrolle und Wartung
@@ -74,6 +86,7 @@
                 </article>
 
                 <article class="leistungskarte">
+                    <span class="leistungsnummer" aria-hidden="true">02</span>
                     <h3>Diagnose & Reparatur</h3>
                     <p>
                         Fehler erkennen und die passende
@@ -86,6 +99,7 @@
                 </article>
 
                 <article class="leistungskarte">
+                    <span class="leistungsnummer" aria-hidden="true">03</span>
                     <h3>Reifen & Räder</h3>
                     <p>
                         Reifenwechsel und Kontrolle
@@ -136,8 +150,11 @@
                     Dieses Formular versendet derzeit noch keine Anfrage.
                 </p>
 
+
                 <!-- Gemeinsamer Container für das responsive Feldraster. -->
                 <div class="formularfelder">
+                    <!-- Die Überschrift gehört ebenfalls in das Raster. -->
+                    <h4 class="formular-zwischenueberschrift">Ihre Kontaktdaten</h4>
                     <div class="formularfeld">
                         <label for="name">Ihr Name *</label>
                         <input type="text" id="name" name="name" autocomplete="name" required>
@@ -153,6 +170,7 @@
                         <input type="tel" id="telefon" name="telefon" autocomplete="tel">
                     </div>
 
+                    <h4 class="formular-zwischenueberschrift">Ihr Fahrzeug</h4>
                     <div class="formularfeld">
                         <label for="fahrzeug">Fahrzeug *</label>
                         <input type="text" id="fahrzeug" name="fahrzeug"
@@ -200,6 +218,7 @@
                         </button>
                     </div>
 
+                    <h4 class="formular-zwischenueberschrift">Ihre Terminanfrage</h4>
                     <div class="formularfeld">
                         <label for="leistung">Gewünschte Leistung *</label>
                         <select id="leistung" name="leistung" required>
@@ -213,7 +232,13 @@
 
                     <div class="formularfeld">
                         <label for="wunschtermin">Wunschtermin</label>
-                        <input type="date" id="wunschtermin" name="wunschtermin">
+                        <input type="date" id="wunschtermin" name="wunschtermin"
+                            aria-describedby="wunschtermin-hinweis">
+                        <!-- Verknüpfter Hinweis wird auch von Screenreadern vorgelesen. -->
+                        <small id="wunschtermin-hinweis" class="formularhinweis">
+                            Wir stimmen den verfügbaren Termin mit Ihnen ab.
+                            Ihre Anfrage ist noch keine Terminbestätigung.
+                        </small>
                     </div>
 
                     <div class="formularfeld">

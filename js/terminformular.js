@@ -1,7 +1,3 @@
-// Prüft, ob der Browser diese Datei lädt.
-console.log("terminformular.js wurde geladen");
-
-
 // Übernimmt die angeklickte Leistung in die Formularauswahl.
 const leistungslinks = document.querySelectorAll(".leistungslink");
 const leistungsAuswahl = document.querySelector("#leistung");
@@ -93,4 +89,27 @@ if (
         fahrzeugscheinStatus.textContent = "Das Bild wurde entfernt.";
         fahrzeugscheinInput.focus();
     });
+}
+
+// Frühester Wunschtermin ist das heutige lokale Datum.
+const wunschterminInput = document.querySelector("#wunschtermin");
+
+if (wunschterminInput) {
+    function aktualisiereFruehestenTermin() {
+        const heute = new Date();
+        const jahr = heute.getFullYear();
+        const monat = String(heute.getMonth() + 1).padStart(2, "0");
+        const tag = String(heute.getDate()).padStart(2, "0");
+
+        // Datumsfelder erwarten das Format JJJJ-MM-TT.
+        wunschterminInput.min = `${jahr}-${monat}-${tag}`;
+    }
+
+    aktualisiereFruehestenTermin();
+
+    // Aktualisiert das Datum auch bei länger geöffneter Seite.
+    wunschterminInput.addEventListener(
+        "focus",
+        aktualisiereFruehestenTermin
+    );
 }

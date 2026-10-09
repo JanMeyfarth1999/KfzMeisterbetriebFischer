@@ -1,11 +1,13 @@
+/* ==================================================
+   1. Grundlagen und Farbvariablen
+   ================================================== */
+
 :root {
     --blau: #0066ff;
     --schwarz: #111111;
     --weiss: #ffffff;
     --silbergrau: #e5e7eb;
-
-    --seitenabstand: max(24px,
-            calc((100% - 1152px) / 2));
+    --seitenabstand: max(24px, calc((100% - 1152px) / 2));
 }
 
 * {
@@ -18,6 +20,61 @@ body {
     color: var(--schwarz);
     background-color: var(--weiss);
 }
+
+/* ==================================================
+   2. Gemeinsame Buttons und Untertitel
+   ================================================== */
+
+.startbereich .untertitel,
+.werkstatt .untertitel {
+    margin: 0 0 16px;
+    color: var(--weiss);
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    max-width: 100%;
+    margin-top: 24px;
+    padding: 16px 28px;
+    color: var(--weiss);
+    background-color: var(--blau);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #0052cc;
+}
+
+.button:focus-visible {
+    outline: 3px solid var(--weiss);
+    outline-offset: 4px;
+    border-color: var(--schwarz);
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.button:disabled:hover {
+    background-color: var(--blau);
+}
+
+/* ==================================================
+   3. Kopfbereich und Navigation
+   ================================================== */
 
 header {
     display: flex;
@@ -61,23 +118,38 @@ nav a:focus-visible {
     outline-offset: 3px;
 }
 
+.menue-button {
+    display: none;
+    min-height: 44px;
+    padding: 10px 18px;
+    color: var(--schwarz);
+    background-color: var(--weiss);
+    border: 1px solid var(--silbergrau);
+    border-radius: 8px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menue-button:focus-visible {
+    outline: 2px solid var(--blau);
+    outline-offset: 3px;
+}
+
+/* ==================================================
+   4. Startbereich
+   ================================================== */
+
 .startbereich {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
     min-height: 560px;
     padding: 64px 24px;
     color: var(--weiss);
     background-color: var(--schwarz);
-
-    background-image:
-        linear-gradient(90deg,
-            rgba(0, 0, 0, 0.85),
-            rgba(0, 0, 0, 0.45)),
-        url("Images/demoBuehne.png");
-
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.45)), url("Images/demoBuehne.png");
     background-size: cover;
     background-position: 65% 35%;
 }
@@ -88,51 +160,66 @@ nav a:focus-visible {
     line-height: 1.7;
 }
 
-.startbereich .untertitel,
-.werkstatt .untertitel {
-    margin: 0 0 16px;
-    color: var(--weiss);
-    font-size: 0.875rem;
-    font-weight: bold;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
 .startbereich h1 {
     max-width: 750px;
     margin: 0 0 24px;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.75rem, 5.5vw, 5rem);
     line-height: 1.05;
+    letter-spacing: -0.045em;
 }
 
-.button {
+/* Heller Blauton für lesbaren Text auf dem dunklen Foto. */
+.start-akzent {
+    color: #75b5ff;
+}
+
+.startbereich .startbeschreibung {
+    max-width: 520px;
+    margin: 0;
+    color: var(--silbergrau);
+}
+
+/* Die Aktionen umbrechen automatisch, wenn der Platz knapp wird. */
+.startaktionen {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 28px;
+    margin-top: 32px;
+}
+
+/* Den Abstand übernimmt hier die gemeinsame Aktionsgruppe. */
+.startaktionen .button {
+    gap: 16px;
+    margin-top: 0;
+    box-shadow: 0 8px 28px rgba(0, 102, 255, 0.25);
+}
+
+.startlink {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 12px;
     min-height: 48px;
-    max-width: 100%;
-    margin-top: 24px;
-    padding: 16px 28px;
-
+    padding: 8px 0;
     color: var(--weiss);
-    background-color: var(--blau);
-    border: 2px solid transparent;
-    border-radius: 8px;
-
     font-weight: bold;
-    text-align: center;
     text-decoration: none;
 }
 
-.button:hover {
-    background-color: #0052cc;
+.startlink:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
 
-.button:focus-visible {
-    outline: 3px solid var(--weiss);
-    outline-offset: 4px;
-    border-color: var(--schwarz);
+.startlink:focus-visible {
+    outline: 2px solid var(--weiss);
+    outline-offset: 5px;
+    border-radius: 4px;
 }
+
+/* ==================================================
+   5. Gemeinsame Bereiche und Karten
+   ================================================== */
 
 .leistungen,
 .kontakt {
@@ -159,8 +246,7 @@ nav a:focus-visible {
 .leistungsliste,
 .kontaktliste {
     display: grid;
-    grid-template-columns: repeat(auto-fit,
-            minmax(min(100%, 280px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 24px;
 }
 
@@ -187,207 +273,15 @@ nav a:focus-visible {
     line-height: 1.6;
 }
 
+/* ==================================================
+   6. Leistungen und Anfragelinks
+   ================================================== */
+
 .leistungskarte:hover {
     border-color: var(--blau);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
-.kontaktkarte address {
-    font-style: normal;
-    overflow-wrap: anywhere;
-}
-
-.kontaktkarte p+p {
-    margin-top: 8px;
-}
-
-
-.werkstatt {
-    padding: 80px 24px;
-    color: var(--weiss);
-    background-color: var(--schwarz);
-    background-image: radial-gradient(circle at top right,
-            rgba(0, 102, 255, 0.18),
-            transparent 60%);
-}
-
-.werkstatt-inhalt {
-    max-width: 1152px;
-    margin: 0 auto;
-}
-
-.werkstatt h2 {
-    max-width: 750px;
-    margin: 0 0 24px;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1.1;
-    letter-spacing: -0.04em;
-}
-
-.werkstatt-inhalt>p:not(.untertitel) {
-    max-width: 600px;
-    margin: 0;
-    color: var(--silbergrau);
-    line-height: 1.7;
-}
-
-.fusszeile {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    padding: 32px 24px;
-    color: var(--weiss);
-    background-color: var(--schwarz);
-    border-top: 3px solid var(--blau);
-}
-
-.fusszeile p {
-    margin: 0;
-    line-height: 1.6;
-}
-
-.fusszeile-name {
-    font-weight: bold;
-}
-
-.demo-hinweis {
-    color: var(--silbergrau);
-    font-size: 0.875rem;
-}
-
-.menue-button {
-    display: none;
-    min-height: 44px;
-    padding: 10px 18px;
-    color: var(--schwarz);
-    background-color: var(--weiss);
-    border: 1px solid var(--silbergrau);
-    border-radius: 8px;
-    font: inherit;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.menue-button:focus-visible {
-    outline: 2px solid var(--blau);
-    outline-offset: 3px;
-}
-
-/* Tage und Zeiten stehen in zwei gemeinsamen Spalten. */
-.oeffnungszeiten {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 10px 16px;
-    margin: 0;
-    color: #52525b;
-    font-size: 0.9375rem;
-    line-height: 0.8;
-}
-
-.oeffnungszeiten dt {
-    font-weight: bold;
-}
-
-.oeffnungszeiten dd {
-    margin: 0;
-    text-align: right;
-}
-
-/* Eigener Formularbereich über den Kontaktkarten. */
-.terminformular {
-    margin-bottom: 48px;
-    padding: clamp(24px, 4vw, 40px);
-    background-color: #f5f6f8;
-    border: 1px solid var(--silbergrau);
-    border-radius: 16px;
-}
-
-.terminformular h3 {
-    margin: 0 0 16px;
-    font-size: 1.5rem;
-}
-
-.terminformular>p {
-    max-width: 650px;
-    margin: 0 0 24px;
-    color: #52525b;
-    line-height: 1.6;
-}
-
-/* Zwei gleich breite Spalten für ein ruhiges Formularlayout. */
-.formularfelder {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    margin-bottom: 24px;
-}
-
-/* Der Upload nutzt die gesamte Formularbreite. */
-.formularfeld-upload {
-    grid-column: 1 / -1;
-}
-
-.formularfeld {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 0;
-}
-
-.formularfeld label {
-    font-weight: bold;
-}
-
-/* Eine gemeinsame Regel gestaltet alle drei Feldtypen. */
-.formularfeld input,
-.formularfeld textarea,
-.formularfeld select {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px 14px;
-    font: inherit;
-    color: var(--schwarz);
-    background-color: var(--weiss);
-    border: 1px solid #9ca3af;
-    border-radius: 8px;
-}
-
-/* Das Anliegen nutzt die gesamte Rasterbreite. */
-.formularfeld:has(textarea) {
-    grid-column: 1 / -1;
-}
-
-.formularfeld textarea {
-    resize: vertical;
-}
-
-/* Sichtbarer Rahmen beim Ausfüllen mit der Tastatur. */
-.formularfeld input:focus-visible,
-.formularfeld textarea:focus-visible,
-.formularfeld select:focus-visible {
-    outline: 2px solid var(--blau);
-    outline-offset: 2px;
-}
-
-.terminformular .button {
-    font: inherit;
-    font-weight: bold;
-}
-
-/* Der Versand bleibt vorerst deaktiviert. */
-.button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.button:disabled:hover {
-    background-color: var(--blau);
-}
-
-/* Gemeinsame Gestaltung der Anfragelinks auf den Leistungskarten. */
 .leistungslink {
     display: inline-flex;
     align-items: center;
@@ -408,7 +302,112 @@ nav a:focus-visible {
     border-radius: 4px;
 }
 
-/* Gemeinsame Gestaltung für Telefon- und E-Mail-Link. */
+/* Zusätzliche Gestaltung speziell für die Leistungskarten. */
+.leistungskarte {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #ffffff, #f5f6f8);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.leistungsnummer {
+    margin-bottom: 24px;
+    color: #0052cc;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: -0.06em;
+}
+
+/* Gleiche Linkposition auch bei unterschiedlich langen Texten. */
+.leistungskarte .leistungslink {
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+/* ==================================================
+   7. Werkstatt
+   ================================================== */
+
+.werkstatt {
+    padding: 80px 24px;
+    color: var(--weiss);
+    background-color: var(--schwarz);
+    background-image: radial-gradient(circle at top right, rgba(0, 102, 255, 0.18), transparent 60%);
+}
+
+/* Blaue Linie und dezenter Farbverlauf betonen den Werkstatttext. */
+.werkstatt-inhalt {
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: clamp(24px, 4vw, 48px);
+    border-left: 4px solid var(--blau);
+    border-radius: 0 16px 16px 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 102, 255, 0.12),
+        transparent
+    );
+}
+
+.werkstatt h2 {
+    max-width: 750px;
+    margin: 0 0 24px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.werkstatt-inhalt>p:not(.untertitel) {
+    max-width: 600px;
+    margin: 0;
+    color: var(--silbergrau);
+    line-height: 1.7;
+}
+
+/* Mehr Abstand zwischen den Buchstaben der kleinen Bereichsüberschrift. */
+.werkstatt .untertitel {
+    color: #75b5ff;
+}
+
+/* Der Kontaktbutton bleibt auch auf kleinen Geräten innerhalb der Fläche. */
+.werkstatt-inhalt .button {
+    max-width: 100%;
+}
+
+/* ==================================================
+   8. Kontakt und Öffnungszeiten
+   ================================================== */
+
+.kontaktkarte address {
+    font-style: normal;
+    overflow-wrap: anywhere;
+}
+
+.kontaktkarte p+p {
+    margin-top: 8px;
+}
+
+.oeffnungszeiten {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 16px;
+    margin: 0;
+    color: #52525b;
+    font-size: 0.9375rem;
+    line-height: 0.8;
+}
+
+.oeffnungszeiten dt {
+    font-weight: bold;
+}
+
+.oeffnungszeiten dd {
+    margin: 0;
+    text-align: right;
+}
+
 .kontaktlink {
     display: inline-flex;
     align-items: center;
@@ -429,20 +428,133 @@ nav a:focus-visible {
     border-radius: 4px;
 }
 
-/* Hilfetexte unter den Formularfeldern. */
+/* ==================================================
+   9. Terminanfrage und Formularfelder
+   ================================================== */
+
+/* Dezenter Schatten hebt das Formular vom Seitenhintergrund ab. */
+.terminformular {
+    margin-bottom: 48px;
+    padding: clamp(24px, 4vw, 40px);
+    background-color: #f5f6f8;
+    border: 1px solid var(--silbergrau);
+    border-radius: 16px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+}      
+
+.terminformular h3 {
+    margin: 0 0 16px;
+    font-size: 1.5rem;
+}
+
+.terminformular>p {
+    max-width: 650px;
+    margin: 0 0 24px;
+    color: #52525b;
+    line-height: 1.6;
+}
+
+.formularfelder {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.formularfeld {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.formularfeld label {
+    font-weight: bold;
+}
+
+.formularfeld input,
+.formularfeld textarea,
+.formularfeld select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--schwarz);
+    background-color: var(--weiss);
+    border: 1px solid #9ca3af;
+    border-radius: 8px;
+}
+
+.formularfeld:has(textarea) {
+    grid-column: 1 / -1;
+}
+
+.formularfeld textarea {
+    resize: vertical;
+}
+
+.formularfeld input:focus-visible,
+.formularfeld textarea:focus-visible,
+.formularfeld select:focus-visible {
+    outline: 2px solid var(--blau);
+    outline-offset: 2px;
+}
+
+.terminformular .button {
+    font: inherit;
+    font-weight: bold;
+}
+
 .formularhinweis {
     color: #52525b;
     font-size: 0.875rem;
     line-height: 1.5;
 }
 
-/* Lange Dateinamen sollen das Formular nicht verbreitern. */
+/* Blaue Markierung trennt die Formularbereiche optisch. */
+.formular-zwischenueberschrift {
+    grid-column: 1 / -1;
+    margin: 16px 0 0;
+    padding: 4px 0 12px 16px;
+    color: var(--schwarz);
+    border-left: 3px solid var(--blau);
+    border-bottom: 1px solid var(--silbergrau);
+    font-size: 1.125rem;
+    letter-spacing: -0.02em;
+}
+
+.formular-zwischenueberschrift:first-child {
+    margin: 16px 0 16px;
+}
+
+/* ==================================================
+   10. Fahrzeugschein-Upload und Bildvorschau
+   ================================================== */
+
+/* Hebt den optionalen Upload innerhalb des Formulars hervor. */
+.formularfeld-upload {
+    grid-column: 1 / -1;
+    padding: clamp(16px, 3vw, 24px);
+    background-color: #eef4ff;
+    border: 1px dashed #7daaff;
+    border-radius: 12px;
+}
+
+.formularfeld-upload > label {
+    font-size: 1.125rem;
+}
+
+/* Sichtbare Hervorhebung, sobald ein Element darin den Fokus erhält. */
+.formularfeld-upload:focus-within {
+    border-color: var(--blau);
+    border-style: solid;
+}
+
 .formularfeld input[type="file"] {
     min-width: 0;
     padding: 10px;
 }
 
-/* Auswahlknopf passend zu den Farben der Website. */
 .formularfeld input[type="file"]::file-selector-button {
     margin-right: 12px;
     padding: 8px 12px;
@@ -458,18 +570,25 @@ nav a:focus-visible {
     background-color: #0052cc;
 }
 
-/* Zeigt das vollständige Foto ohne Abschneiden. */
-.fahrzeugschein-vorschau {
-    display: block;
-    max-width: 100%;
-    max-height: 320px;
-    margin-top: 16px;
-    object-fit: contain;
-    border: 1px solid var(--silbergrau);
-    border-radius: 8px;
+/* Hebt den optionalen Upload innerhalb des Formulars hervor. */
+.formularfeld-upload {
+    grid-column: 1 / -1;
+    padding: clamp(16px, 3vw, 24px);
+    background-color: #eef4ff;
+    border: 1px dashed #7daaff;
+    border-radius: 12px;
 }
 
-/* Verhindert, dass display: block das hidden-Attribut übersteuert. */
+.formularfeld-upload > label {
+    font-size: 1.125rem;
+}
+
+/* Sichtbare Hervorhebung, sobald ein Element darin den Fokus erhält. */
+.formularfeld-upload:focus-within {
+    border-color: var(--blau);
+    border-style: solid;
+}
+
 .fahrzeugschein-vorschau[hidden] {
     display: none;
 }
@@ -499,6 +618,40 @@ nav a:focus-visible {
     display: none;
 }
 
+/* ==================================================
+   11. Fußzeile
+   ================================================== */
+
+.fusszeile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 32px 24px;
+    color: var(--weiss);
+    background-color: var(--schwarz);
+    border-top: 3px solid var(--blau);
+}
+
+.fusszeile p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.fusszeile-name {
+    font-weight: bold;
+}
+
+.demo-hinweis {
+    color: var(--silbergrau);
+    font-size: 0.875rem;
+}
+
+/* ==================================================
+   12. Handyansicht, Animationen und Desktopansicht
+   ================================================== */
+
 @media (max-width: 767px) {
     header {
         flex-direction: row;
@@ -526,7 +679,6 @@ nav a:focus-visible {
         flex-direction: column;
     }
 
-    /* Auf Handys stehen alle Formularfelder untereinander. */
     .formularfelder {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -538,9 +690,7 @@ nav a:focus-visible {
     }
 
     .button {
-        transition:
-            background-color 0.2s ease,
-            transform 0.2s ease;
+        transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
     .button:hover {
@@ -548,19 +698,13 @@ nav a:focus-visible {
     }
 
     .leistungskarte {
-        transition:
-            transform 0.2s ease,
-            border-color 0.2s ease,
-            box-shadow 0.2s ease;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .leistungskarte:hover {
         transform: translateY(-4px);
     }
 }
-
-
-
 
 @media (min-width: 768px) {
     header {
