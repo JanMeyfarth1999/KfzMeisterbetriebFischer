@@ -460,6 +460,11 @@ nav .navigation-anruf:hover {
     max-width: 100%;
 }
 
+/* Abstand zwischen den aufeinanderfolgenden Beschreibungstexten. */
+.werkstatt-inhalt>p:not(.untertitel)+p {
+    margin-top: 20px;
+}
+
 /* ==================================================
    8. Kontakt und Öffnungszeiten
    ================================================== */
