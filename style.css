@@ -788,6 +788,145 @@ nav .navigation-anruf:hover {
     border-radius: 4px;
 }
 
+/* ==================================================
+   Rechtliche Seiten: Impressum und Datenschutz
+   ================================================== */
+
+.rechtliche-seite {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 80px) 24px;
+}
+
+.zurueck-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    margin-bottom: 24px;
+    color: #0052cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.zurueck-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.rechtliche-seite h1 {
+    margin: 0 0 16px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.04em;
+}
+
+.rechtliche-einleitung {
+    margin: 0 0 32px;
+    color: #52525b;
+    line-height: 1.6;
+}
+
+/* Helle Inhaltsfläche passend zu unseren Karten. */
+.rechtlicher-inhalt {
+    padding: clamp(20px, 4vw, 40px);
+    background: linear-gradient(145deg, #ffffff, #f5f6f8);
+    border: 1px solid var(--silbergrau);
+    border-top: 3px solid var(--blau);
+    border-radius: 16px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+    overflow-wrap: anywhere;
+}
+
+.rechtlicher-inhalt section+section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--silbergrau);
+}
+
+.rechtlicher-inhalt h2 {
+    margin: 0 0 16px;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+.rechtlicher-inhalt p,
+.rechtlicher-inhalt address {
+    max-width: 750px;
+    margin: 0;
+    color: #52525b;
+    font-style: normal;
+    line-height: 1.8;
+}
+
+.rechtlicher-inhalt p+p {
+    margin-top: 16px;
+}
+
+.rechtlicher-inhalt a {
+    color: #0052cc;
+    text-underline-offset: 3px;
+}
+
+.rechtlicher-inhalt .rechtlicher-entwurf {
+    max-width: none;
+    margin-bottom: 32px;
+    padding: 16px;
+    background-color: #eef4ff;
+    border-left: 3px solid var(--blau);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Rechtliche Links sind unabhängig von der Hauptnavigation. */
+.rechtliche-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+}
+
+/* Links mit einer blauen Linie beim Darüberfahren. */
+.rechtliche-links a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px;
+
+    color: var(--weiss);
+    font-size: 0.875rem;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.rechtliche-links a::after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    bottom: 4px;
+    left: 8px;
+
+    height: 2px;
+    background-color: var(--blau);
+    border-radius: 2px;
+
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.rechtliche-links a:hover,
+.rechtliche-links a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.rechtliche-links a:hover::after,
+.rechtliche-links a:focus-visible::after,
+.rechtliche-links a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
+.rechtliche-links a:focus-visible {
+    outline: 2px solid var(--weiss);
+    outline-offset: 4px;
+}
 
 /* ==================================================
    12. Handyansicht, Animationen und Desktopansicht
@@ -890,6 +1029,14 @@ nav .navigation-anruf:hover {
     }
 
     nav a::after {
+        transition: transform 0.2s ease;
+    }
+
+    .rechtliche-links a {
+        transition: background-color 0.2s ease;
+    }
+
+    .rechtliche-links a::after {
         transition: transform 0.2s ease;
     }
 }
