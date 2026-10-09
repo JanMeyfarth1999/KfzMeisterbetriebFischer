@@ -17,7 +17,7 @@
     <script src="js/terminformular.js" defer></script>
 </head>
 
-<body>
+<body id="seitenanfang">
     <header>
         <a href="index.html">
             <img src="Images/Fischer Logo.jpeg" alt="Logo des Kfz-Meisterbetriebs Fischer" class="logo">
@@ -31,6 +31,10 @@
             <a href="#leistungen">Leistungen</a>
             <a href="#werkstatt">Unsere Werkstatt</a>
             <a href="#kontakt">Kontakt</a>
+            <!-- Auf Smartphones kann die Werkstatt direkt angerufen werden. -->
+            <a href="tel:+495684922442" class="navigation-anruf">
+                Jetzt anrufen <span aria-hidden="true">↗</span>
+            </a>
         </nav>
     </header>
 
@@ -321,9 +325,19 @@
             </div>
         </section>
     </main>
-
     <footer class="fusszeile">
-        <p class="fusszeile-name">Kfz-Meisterbetrieb Fischer</p>
+        <div>
+            <p class="fusszeile-name">Kfz-Meisterbetrieb Fischer</p>
+            <p class="fusszeile-adresse">
+                Mühlenstraße 3 · 34621 Frielendorf
+            </p>
+        </div>
+
+        <!-- Button führt zurück zum Seitenanfang. -->
+        <a href="#seitenanfang" class="nach-oben-button">
+            Nach oben <span aria-hidden="true">↑</span>
+        </a>
+
         <p class="demo-hinweis">Webseite im Aufbau</p>
     </footer>
 </body>
