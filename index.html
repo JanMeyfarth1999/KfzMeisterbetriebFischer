@@ -11,7 +11,10 @@
         content="Kfz-Meisterbetrieb Fischer in Frielendorf: Inspektion, Wartung, Diagnose, Reparatur und Reifenservice. Kontaktieren Sie uns für eine Terminanfrage.">
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+
+    <!-- Getrennte Dateien für Navigation und Terminanfrage. -->
+    <script src="js/navigation.js" defer></script>
+    <script src="js/terminformular.js" defer></script>
 </head>
 
 <body>
@@ -187,6 +190,14 @@
                             Persönliche Angaben wie Name und Anschrift können Sie abdecken.
                             Das Bild wird derzeit noch nicht versendet.
                         </small>
+                        <!-- Wird erst nach der Auswahl eines lesbaren Bildes angezeigt. -->
+                        <img id="fahrzeugschein-vorschau" class="fahrzeugschein-vorschau"
+                            alt="Vorschau des ausgewählten Fahrzeugscheins" hidden>
+                        <p id="fahrzeugschein-status" class="formularhinweis" role="status"></p>
+                        <!-- Entfernt das ausgewählte Foto und seine Vorschau. -->
+                        <button type="button" id="fahrzeugschein-entfernen" class="bild-entfernen" hidden>
+                            Bild entfernen
+                        </button>
                     </div>
 
                     <div class="formularfeld">
@@ -230,17 +241,17 @@
                     </a>
                 </p>
 
-                <!-- Öffnet das eingerichtete E-Mail-Programm. -->
+                <!-- Öffnet das E-Mail-Programm mit der Werkstatt als Empfänger. -->
                 <p>
-                    <a class="kontaktlink" href="mailto:lukas.fischer@frielendorf.de">
-                        lukas.fischer@frielendorf.de
+                    <a href="mailto:info.kfz-fischer@web.de" class="kontaktlink">
+                        info.kfz-fischer@web.de
                     </a>
                 </p>
             </div>
             <div class="kontaktkarte">
                 <h3>Hier finden Sie uns</h3>
                 <address>
-                    Kfz-Meisterbetrieb-Fischer<br>
+                    Kfz-Meisterbetrieb Fischer<br>
                     Mühlenstraße 3<br>
                     34621 Frielendorf
                 </address>
@@ -287,7 +298,7 @@
     </main>
 
     <footer class="fusszeile">
-        <p class="fusszeile-name">Kfz-Meisterbetrieb-Fischer</p>
+        <p class="fusszeile-name">Kfz-Meisterbetrieb Fischer</p>
         <p class="demo-hinweis">Webseite im Aufbau</p>
     </footer>
 </body>

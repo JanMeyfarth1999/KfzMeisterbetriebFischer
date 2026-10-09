@@ -458,6 +458,47 @@ nav a:focus-visible {
     background-color: #0052cc;
 }
 
+/* Zeigt das vollständige Foto ohne Abschneiden. */
+.fahrzeugschein-vorschau {
+    display: block;
+    max-width: 100%;
+    max-height: 320px;
+    margin-top: 16px;
+    object-fit: contain;
+    border: 1px solid var(--silbergrau);
+    border-radius: 8px;
+}
+
+/* Verhindert, dass display: block das hidden-Attribut übersteuert. */
+.fahrzeugschein-vorschau[hidden] {
+    display: none;
+}
+
+.bild-entfernen {
+    align-self: flex-start;
+    min-height: 44px;
+    padding: 10px 16px;
+    color: var(--schwarz);
+    background-color: var(--weiss);
+    border: 1px solid #9ca3af;
+    border-radius: 8px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.bild-entfernen:hover {
+    background-color: var(--silbergrau);
+}
+
+.bild-entfernen:focus-visible {
+    outline: 2px solid var(--blau);
+    outline-offset: 3px;
+}
+
+.bild-entfernen[hidden] {
+    display: none;
+}
+
 @media (max-width: 767px) {
     header {
         flex-direction: row;
